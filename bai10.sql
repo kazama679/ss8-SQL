@@ -11,7 +11,7 @@ from view_total_sales;
 
 select v.productLine, pl.textDescription, v.total_sales, v.total_quantity,
     case
-        when v.total_quantity > 1000 then concat(substr(pl.textDescription, 1, 30), '...') 
+        when length(pl.textdescription) > 30 then concat(substr(pl.textDescription, 1, 30), '...') 
         else substr(pl.textDescription, 1, 30)
     end as description_snippet,
     case
